@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export const login = () => {
+export const Login = () => {
   return (
     <div  className='bg-[#C5CEE8] h-screen mx-auto flex items-center p-20 w-full'>
       <section className='flex items-center mx-auto justify-center'>
@@ -24,4 +24,4 @@ export const login = () => {
   )
 }
 
-export default login;
+export default Login;

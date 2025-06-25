@@ -1,8 +1,18 @@
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 
 export const Profile = () => {
+    const [personalData, setPersonalData] = useState({
+        fullname: String,
+        email: String,
+        number: Number,
+        department: String,
+        school: String,
+    })
+
+    // const [careerData, setCareerData] = useState{}
   return (
     <div  className='bg-[#C5CEE8] h-screen mx-auto flex items-center p-20 w-full'>
       <section className='flex items-center mx-auto justify-center'>
