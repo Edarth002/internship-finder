@@ -7,6 +7,8 @@ import Image from 'next/image';
 const HomePage = () => {
   return (
     <div  className='bg-[#C5CEE8] h-screen mx-auto flex items-center p-20 w-full'>
+
+      
       <section className='flex items-center mx-auto justify-center'>
         <div className='w-2/4'>
           <h1 className='text-3xl text-blue-900 leading-relaxed text-left'>

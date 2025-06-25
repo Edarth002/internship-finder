@@ -4,7 +4,8 @@ import Image from 'next/image'
 
 const Login = () => {
   return (
-    <div  className='bg-[#C5CEE8] h-screen mx-auto flex items-center p-20 w-full'>
+    <div  className='bg-[#C5CEE8] h-screen mx-auto p-20 w-full'>
+        
       <section className='flex items-center mx-auto justify-center'>
         <form action="" method="post" className='w-2/4'>
             <h1 className='text-3xl text-center my-5 text-blue-800 font-bold'>Welcome Back</h1>
