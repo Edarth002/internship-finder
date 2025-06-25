@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 
-export const Profile = () => {
+const Profile = () => {
     const [personalData, setPersonalData] = useState({
         fullname: String,
         email: String,
