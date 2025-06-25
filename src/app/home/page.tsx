@@ -13,7 +13,7 @@ export const HomePage = () => {
             Getting that desired <span className='text-orange-400'>Internship</span> should not be that hard...
           </h1>
           <div className='mt-12'>
-            <Link href='/' className='bg-blue-900 hover:bg-blue-700  duration-500 cursor-pointer text-white p-4 rounded-full'>Get Started</Link>
+            <Link href='/auth/signup' className='bg-blue-900 hover:bg-blue-700  duration-500 cursor-pointer text-white p-4 rounded-full'>Get Started</Link>
           </div>
           
         </div>
