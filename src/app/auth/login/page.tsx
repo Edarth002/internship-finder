@@ -16,7 +16,9 @@ const Login = () => {
             <button type="submit" className='outline-none text-white bg-blue-800  rounded-sm w-full py-2 px-2 mt-7 hover:bg-blue-950 duration-500 cursor-pointer' >Submit</button>
 
             <p className='text-center text-sm mt-3'>No account with us yet? <Link href='/auth/signup' className='text-blue-800 hover:text-blue-900 duration-500 cursor-pointer'>Signup</Link></p>
+            <Link href='/profile' className='text-blue-800 hover:text-blue-900 duration-500 cursor-pointer text-right'>Profile</Link>
         </form>
+
         <div className='w-3/4'>
           <Image src='/hero.png' alt='Hero Image' width={1000} height={1000} className=''/>
         </div>
