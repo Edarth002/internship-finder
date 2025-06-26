@@ -1,10 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import Header from '@/app/components/header'
 
 const signUp = () => {
   return (
-    <div  className='bg-[#C5CEE8] h-screen mx-auto flex items-center p-20 w-full'>
+    <div  className='bg-[#C5CEE8] h-screen  p-20 w-full'>
+      <Header/>
       <section className='flex items-center mx-auto justify-center'>
         <form action="" method="post" className='w-2/4'>
             <h1 className='text-3xl text-center my-5 text-blue-800 font-bold'>Sign Up to get Started</h1>

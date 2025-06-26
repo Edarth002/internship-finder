@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import Header from '../components/header';
 
 const Profile = () => {
     const [form, setForm] = useState({
@@ -29,8 +30,8 @@ const Profile = () => {
 
 
   return (
-    <div  className='bg-[#C5CEE8] h-screen mx-auto items-center p-20 w-full'>
-         
+    <div  className='bg-[#C5CEE8] h-screen p-20 w-full'>
+         <Header/>
               
 
         {steps ? (

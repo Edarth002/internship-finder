@@ -1,10 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import Header from '@/app/components/header'
 
 const Login = () => {
   return (
-    <div  className='bg-[#C5CEE8] h-screen mx-auto p-20 w-full'>
+    <div  className='bg-[#C5CEE8] h-screen p-20 w-full'>
+      <Header/>
         
       <section className='flex items-center mx-auto justify-center'>
         <form action="" method="post" className='w-2/4'>
@@ -16,7 +18,6 @@ const Login = () => {
             <button type="submit" className='outline-none text-white bg-blue-800  rounded-sm w-full py-2 px-2 mt-7 hover:bg-blue-950 duration-500 cursor-pointer' >Submit</button>
 
             <p className='text-center text-sm mt-3'>No account with us yet? <Link href='/auth/signup' className='text-blue-800 hover:text-blue-900 duration-500 cursor-pointer'>Signup</Link></p>
-            <Link href='/profile' className='text-blue-800 hover:text-blue-900 duration-500 cursor-pointer text-right'>Profile</Link>
         </form>
 
         <div className='w-3/4'>

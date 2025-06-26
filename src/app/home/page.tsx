@@ -3,12 +3,13 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import Header from '../components/header';
 
 const HomePage = () => {
   return (
-    <div  className='bg-[#C5CEE8] h-screen mx-auto flex items-center p-20 w-full'>
+    <div  className='bg-[#C5CEE8] h-screen p-20 w-full'>
 
-      
+      <Header/>
       <section className='flex items-center mx-auto justify-center'>
         <div className='w-2/4'>
           <h1 className='text-3xl text-blue-900 leading-relaxed text-left'>
