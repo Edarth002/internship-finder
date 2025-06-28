@@ -97,35 +97,16 @@ model Application {
 }
 ```
 
----
-
-## 🚧 Geolocation Matching Logic
-
-
----
 
 ## 🚀 Getting Started
 
 ```bash
 # 1. Clone the project
-$ git clone https://github.com/yourusername/internship-finder
+$ git clone https://github.com/edarth002/internship-finder
 $ cd internship-finder
 
 # 2. Install dependencies
 $ npm install
-
-# 3. Set up env variables
-$ cp .env.example .env.local
-# Fill in DATABASE_URL, JWT_SECRET, etc.
-
-# 4. Push DB schema
-$ npx prisma db push
-
-# 5. Seed internships (if needed)
-$ tsx backend/seed/fetchJobs.ts
-
-# 6. Run dev server
-$ npm run dev
 ```
 
 ---
