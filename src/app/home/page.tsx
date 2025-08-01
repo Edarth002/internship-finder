@@ -18,7 +18,7 @@ export default function Component() {
     <div className="flex flex-col min-h-screen">
       {/* Header */}
       <header className="px-4 lg:px-6 h-16 flex items-center border-b">
-        <Link className="flex items-center justify-center" href="#">
+        <Link className="flex items-center justify-center" href="/">
           <div className="h-8 w-8 bg-orange-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">IF</span>
           </div>
@@ -27,19 +27,19 @@ export default function Component() {
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
-            href="#program"
+            href="/profile"
           >
             Program
           </Link>
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
-            href="#benefits"
+            href="/dashboard"
           >
             Benefits
           </Link>
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
-            href="#apply"
+            href="/auth/signup"
           >
             Apply
           </Link>
@@ -67,10 +67,13 @@ export default function Component() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <button className="bg-orange-600 hover:bg-orange-700 px-10 py-3 rounded-full flex items-center">
-                    Apply Now
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </button>
+                  <Link href="/auth/signup">
+                    <button className=" cursor-pointer bg-orange-600 hover:bg-orange-700 px-10 py-3 rounded-full flex items-center">
+                      Apply Now
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </button>
+                  </Link>
+
                   <button>Learn More</button>
                 </div>
                 <div className="flex items-center gap-4 text-sm text-gray-600">
@@ -209,7 +212,7 @@ export default function Component() {
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                     Why Choose Our Program?
                   </h2>
-                  <p className="max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  <p className="max-w-[600px] text-gray-600 md:text-lg/relaxed lg:text-base/relaxed xl:text-xl/relaxed py-3">
                     We're committed to providing an exceptional internship
                     experience that sets you up for long-term success in your
                     field of study.
@@ -231,10 +234,9 @@ export default function Component() {
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="h-8 w-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <div className="h-4 w-4 text-orange-600" />
+                      <NetworkIcon className="h-4 w-4 text-orange-600" />
                     </div>
                     <div>
-                      <NetworkIcon />
                       <h3 className="font-semibold">Networking</h3>
                       <p className="text-sm text-gray-600">
                         Connect with industry professionals
@@ -269,7 +271,7 @@ export default function Component() {
                 alt="Office environment"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last"
                 height="310"
-                src="/placeholder.svg?height=310&width=550"
+                src="/hero2.jpg"
                 width="550"
               />
             </div>
@@ -293,10 +295,12 @@ export default function Component() {
                 </p>
               </div>
               <div className="space-x-4">
-                <button className="bg-white text-orange-600 hover:bg-gray-100 px-5 py-3 rounded-full flex items-center">
-                  Apply Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
+                <Link href="/auth/signup">
+                  <button className=" cursor-pointer bg-white text-orange-600 hover:bg-gray-100 px-5 py-3 rounded-full flex items-center">
+                    Apply Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
