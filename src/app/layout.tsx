@@ -11,7 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Internship Finder",
-  description: "A Location-Based Internship Finder for Computer Science Students Using Career Path Preferences and Real-time Availability Data",
+  description:
+    "A Location-Based Internship Finder for Computer Science Students Using Career Path Preferences and Real-time Availability Data",
 };
 
 export default function RootLayout({
@@ -21,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-sans antialiased">
-        {children}
-      </body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
