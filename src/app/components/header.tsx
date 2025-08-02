@@ -1,21 +1,36 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 const Header = () => {
   return (
-    <nav>
-        <ul className='flex items-center text-blue-800 p-3 justify-end'>
-            <li className='px-3 hover:text-blue-950 cursor-pointer duration-300'>
-                <Link href='/'>Home</Link>
-            </li>
-            <li className='px-3 hover:text-blue-950 cursor-pointer duration-300'>
-                <Link href='/profile'>Profile</Link>
-            </li>
-            <li className='px-3 hover:text-blue-950 cursor-pointer duration-300'>
-                <Link href='/dashboard'>Dashboard</Link>
-            </li>
-        </ul>
-    </nav>
-  )
-}
-export default Header
+    <header className="px-4 lg:px-6 h-16 flex items-center border-b">
+      <Link className="flex items-center justify-center" href="/">
+        <div className="h-8 w-8 bg-orange-600 rounded-lg flex items-center justify-center">
+          <span className="text-white font-bold text-sm">IF</span>
+        </div>
+        <span className="ml-2 text-lg font-semibold">InternFind</span>
+      </Link>
+      <nav className="ml-auto flex gap-4 sm:gap-6">
+        <Link
+          className="text-sm font-medium hover:underline underline-offset-4"
+          href="/profile"
+        >
+          Program
+        </Link>
+        <Link
+          className="text-sm font-medium hover:underline underline-offset-4"
+          href="/dashboard"
+        >
+          Benefits
+        </Link>
+        <Link
+          className="text-sm font-medium hover:underline underline-offset-4"
+          href="/auth/signup"
+        >
+          Apply
+        </Link>
+      </nav>
+    </header>
+  );
+};
+export default Header;
