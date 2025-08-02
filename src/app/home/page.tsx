@@ -34,9 +34,9 @@ export default function Component() {
                     <span className="text-orange-600">Internship Platform</span>
                   </h1>
                   <p className="max-w-[600px] text-gray-600 md:text-lg py-5">
-                    Get access to industries where you'll find and work on real
-                    projects, learn from experts, and build skills that apply to
-                    your course of study.
+                    Get access to industries where you&apos;ll find and work on
+                    real projects, learn from experts, and build skills that
+                    apply to your course of study.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -83,7 +83,7 @@ export default function Component() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  What You'll Experience
+                  What You&apos;ll Experience
                 </h2>
                 <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Our comprehensive internship platform is designed to give you
@@ -186,7 +186,7 @@ export default function Component() {
                     Why Choose Our Program?
                   </h2>
                   <p className="max-w-[600px] text-gray-600 md:text-lg/relaxed lg:text-base/relaxed xl:text-xl/relaxed py-3">
-                    We're committed to providing an exceptional internship
+                    We&apos;re committed to providing an exceptional internship
                     experience that sets you up for long-term success in your
                     field of study.
                   </p>
@@ -264,7 +264,8 @@ export default function Component() {
                 </h2>
                 <p className="max-w-[600px] text-orange-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Applications are now open for our Summer 2025 internship
-                  program. Don't miss this opportunity to apply your knowledge
+                  program. Don&apos;t miss this opportunity to apply your
+                  knowledge
                 </p>
               </div>
               <div className="space-x-4">
