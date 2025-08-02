@@ -30,14 +30,14 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-[#C5CEE8] md:h-screen md:p-20 p-10 w-full">
+    <div className="flex flex-col min-h-screen">
       <Header />
 
       {steps ? (
         // Form for Personal Details
-        <section className="flex items-center mx-auto justify-center md:flex-row flex-col-reverse">
+        <section className="flex items-center mx-auto justify-center md:flex-row flex-col-reverse pt-14 px-20">
           <form className="md:w-2/4">
-            <h1 className="text-3xl text-center my-5 text-blue-800 font-bold">
+            <h1 className="text-3xl text-center my-5 text-orange-600 font-bold">
               Personal Details
             </h1>
             <label className="mt-3 text-sm" htmlFor="fullname">
@@ -86,7 +86,7 @@ const Profile = () => {
             />
             <input
               onClick={handleSteps}
-              className="outline-none text-white bg-blue-800  rounded-sm w-full py-2 px-2 mt-7 hover:bg-blue-950 duration-500 cursor-pointer"
+              className="outline-none text-white bg-orange-600  rounded-sm w-full py-2 px-2 mt-7 hover:bg-orange-950 duration-500 cursor-pointer"
               type="button"
               value="Next"
             />
@@ -103,9 +103,9 @@ const Profile = () => {
         </section>
       ) : (
         // Form for other Details
-        <section className="flex items-center mx-auto justify-center md:flex-row flex-col-reverse">
+        <section className="flex items-center mx-auto justify-center md:flex-row flex-col-reverse pt-14 px-20">
           <form action="" method="post" className="md:w-2/4">
-            <h1 className="text-3xl text-center my-5 text-blue-800 font-bold">
+            <h1 className="text-3xl text-center my-5 text-orange-600 font-bold">
               Let us Find you a{" "}
               <span className="text-orange-400">Placement</span>
             </h1>
@@ -145,12 +145,12 @@ const Profile = () => {
             {/* <input onChange={handleInput} value={form.location} className='outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 my-1' type="text" name="location" id="location" /> */}
             <button
               type="submit"
-              className="outline-none text-white bg-blue-800  rounded-sm w-full py-2 px-2 mt-7 hover:bg-blue-950 duration-500 cursor-pointer"
+              className="outline-none text-white bg-orange-600  rounded-sm w-full py-2 px-2 mt-7 hover:bg-orange-950 duration-500 cursor-pointer"
             >
               Submit
             </button>
             <p
-              className="text-blue-900 mt-3 text-lg cursor-pointer"
+              className="text-orange-800 mt-3 text-lg cursor-pointer"
               onClick={handleSteps}
             >
               Go back

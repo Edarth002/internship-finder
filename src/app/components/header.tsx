@@ -15,13 +15,13 @@ const Header = () => {
           className="text-sm font-medium hover:underline underline-offset-4"
           href="/profile"
         >
-          Program
+          Profile
         </Link>
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
           href="/dashboard"
         >
-          Benefits
+          Dashboard
         </Link>
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
