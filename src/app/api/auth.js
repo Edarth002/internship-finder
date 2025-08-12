@@ -15,7 +15,7 @@ export const register = async () => {
     return data;
   } catch (error) {
     console.log("Failed to register because: ", error);
-    Error("Failed to register account");
+    throw error;
   }
 };
 
@@ -26,8 +26,20 @@ export const login = async () => {
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: 
+        body: JSON.stringify({ email: String, password: String }),
       }
     );
-  } catch (error) {}
+    if (!res.ok) throw new Error("User does not exist or Invalid credentials");
+
+    const data = res.json();
+
+    localStorage.setItem("token", data.jwt);
+    localStorage.setItem("user", data.user);
+    console.log("jwt:", data.jwt);
+
+    return { token: data.jwt, user: user.data };
+  } catch (error) {
+    console.log("Failed to login due to: ", error);
+    throw error;
+  }
 };
