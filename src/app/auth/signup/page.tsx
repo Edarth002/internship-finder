@@ -12,20 +12,11 @@ const signUp = () => {
           <h1 className="text-3xl text-center my-5 text-orange-600 font-bold">
             Sign Up to get Started
           </h1>
-          <label className="mt-3 text-sm" htmlFor="Name">
-            Name
-          </label>
-          <input
-            className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 my-1"
-            type="text"
-            name="name"
-            id="name"
-          />
           <label className="mt-3 text-sm" htmlFor="Email">
             Email
           </label>
           <input
-            className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 my-1"
+            className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 mb-5 mt-1"
             type="text"
             name="email"
             id="email"
@@ -34,7 +25,7 @@ const signUp = () => {
             Password
           </label>
           <input
-            className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 my-1"
+            className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 mt-1 mb-5"
             type="password"
             name="password"
             id="password"

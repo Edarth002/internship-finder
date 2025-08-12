@@ -8,7 +8,7 @@ import Header from "../components/header";
 const Profile = () => {
   const [form, setForm] = useState({
     fullname: "",
-    email: "",
+    state: "",
     number: "",
     age: 20,
     department: "",
@@ -52,15 +52,15 @@ const Profile = () => {
               id="fullname"
             />
             <label className="mt-3 text-sm" htmlFor="Name">
-              Email
+              State of Residence
             </label>
             <input
               onChange={handleInput}
-              value={form.email}
+              value={form.state}
               className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 mb-5 mt-1"
               type="text"
-              name="email"
-              id="email"
+              name="state"
+              id="state"
             />
             <label className="mt-3 text-sm" htmlFor="password">
               Phone Number
