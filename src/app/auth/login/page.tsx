@@ -1,9 +1,30 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/app/components/header";
 
 const Login = () => {
+  const [form, setForm] = useState({
+    email: String,
+    password: String,
+  });
+
+  const [success, setSuccess] = useState(String);
+  const [error, setError] = useState(String);
+
+  const handleForm = (e: any) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setSuccess("");
+    setError("");
+    try {
+    } catch (error) {}
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
