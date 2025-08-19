@@ -25,9 +25,15 @@ const Header = () => {
         </Link>
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
-          href="/auth/signup"
+          href="/applications"
         >
-          Apply
+          Applications
+        </Link>
+        <Link
+          className="text-sm font-medium hover:underline underline-offset-4"
+          href="/nearbyjobs"
+        >
+          Nearbyjobs
         </Link>
       </nav>
     </header>

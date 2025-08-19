@@ -32,16 +32,13 @@ export const login = async (email: string, password: string) => {
     }
 
     const data = await res.json();
-    localStorage.setItem("token", data.jwt);
-    localStorage.setItem("user", JSON.stringify(data.user));
-    return { token: data.jwt, user: data.user };
+
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("user", JSON.stringify(data.alreadyExistingUser));
+
+    return { token: data.token, user: data.alreadyExistingUser };
   } catch (error: any) {
     console.error("Failed to login:", error);
     throw error;
   }
-};
-
-export const logout = () => {
-  localStorage.removeItem("token");
-  localStorage.removeItem("user");
 };
