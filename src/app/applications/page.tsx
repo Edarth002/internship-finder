@@ -71,13 +71,13 @@ const ApplicationPage = () => {
                     onClick={() => handleUpdateStatus(app.id, "accepted")}
                     className="bg-green-600 text-white px-3 py-1 rounded"
                   >
-                    Accept
+                    Accepted
                   </button>
                   <button
                     onClick={() => handleUpdateStatus(app.id, "rejected")}
                     className="bg-red-600 text-white px-3 py-1 rounded"
                   >
-                    Reject
+                    Rejected
                   </button>
                   <button
                     onClick={() => handleDelete(app.id)}
