@@ -1,9 +1,8 @@
 "use client";
-import React from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import Image from "next/image";
-import { useState } from "react";
-import Header from "../components/header";
+import Header from "@/app/components/header";
+import { createProfile } from "../api/profile";
 
 const Profile = () => {
   const [form, setForm] = useState({
@@ -15,26 +14,37 @@ const Profile = () => {
     school: "",
     industry: "",
   });
-
   const [steps, setSteps] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const handleSteps = () => {
-    setSteps((prev) => (prev = !prev));
+  const handleSteps = () => setSteps(!steps);
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleInput = (e: any) => {
-    setForm((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    try {
+      await createProfile(form);
+      setSuccess("Profile created successfully!");
+    } catch (err: any) {
+      setError(err.message || "Profile creation failed");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-
       {steps ? (
-        // Form for Personal Details
         <section className="flex items-center mx-auto justify-center md:flex-row flex-col-reverse pt-14 px-20">
           <form className="md:w-2/4">
             <h1 className="text-3xl text-center my-5 text-orange-600 font-bold">
@@ -46,49 +56,46 @@ const Profile = () => {
             <input
               onChange={handleInput}
               value={form.fullname}
-              className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 mb-5 mt-1"
-              type="text"
               name="fullname"
               id="fullname"
+              className="outline-none border w-full py-2 px-2 mb-5"
             />
-            <label className="mt-3 text-sm" htmlFor="Name">
+            <label className="mt-3 text-sm" htmlFor="state">
               State of Residence
             </label>
             <input
               onChange={handleInput}
               value={form.state}
-              className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 mb-5 mt-1"
-              type="text"
               name="state"
               id="state"
+              className="outline-none border w-full py-2 px-2 mb-5"
             />
-            <label className="mt-3 text-sm" htmlFor="password">
+            <label className="mt-3 text-sm" htmlFor="number">
               Phone Number
             </label>
             <input
               onChange={handleInput}
               value={form.number}
-              className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 my-1"
-              type="text"
               name="number"
               id="number"
+              className="outline-none border w-full py-2 px-2 mb-5"
             />
-            <label className="mt-3 text-sm" htmlFor="password">
+            <label className="mt-3 text-sm" htmlFor="age">
               Age
             </label>
             <input
               onChange={handleInput}
               value={form.age}
-              className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 my-1"
-              type="number"
               name="age"
               id="age"
+              type="number"
+              className="outline-none border w-full py-2 px-2"
             />
             <input
               onClick={handleSteps}
-              className="outline-none text-white bg-orange-600  rounded-sm w-full py-2 px-2 mt-7 hover:bg-orange-950 duration-500 cursor-pointer"
               type="button"
               value="Next"
+              className="bg-orange-600 text-white w-full py-2 mt-7 cursor-pointer"
             />
           </form>
           <div className="md:w-3/4">
@@ -97,14 +104,12 @@ const Profile = () => {
               alt="Hero Image"
               width={1000}
               height={1000}
-              className=""
             />
           </div>
         </section>
       ) : (
-        // Form for other Details
         <section className="flex items-center mx-auto justify-center md:flex-row flex-col-reverse pt-14 px-20">
-          <form action="" method="post" className="md:w-2/4">
+          <form onSubmit={handleSubmit} className="md:w-2/4">
             <h1 className="text-3xl text-center my-5 text-orange-600 font-bold">
               Let us Find you a{" "}
               <span className="text-orange-400">Placement</span>
@@ -115,10 +120,9 @@ const Profile = () => {
             <input
               onChange={handleInput}
               value={form.department}
-              className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 mb-5 mt-1"
-              type="text"
               name="department"
               id="department"
+              className="outline-none border w-full py-2 px-2 mb-5"
             />
             <label className="mt-3 text-sm" htmlFor="school">
               School
@@ -126,29 +130,29 @@ const Profile = () => {
             <input
               onChange={handleInput}
               value={form.school}
-              className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 mb-5 mt-1"
-              type="text"
               name="school"
               id="school"
+              className="outline-none border w-full py-2 px-2 mb-5"
             />
             <label className="mt-3 text-sm" htmlFor="industry">
-              Industry(e.g Electrical Engineering, Web development etc)
+              Industry
             </label>
             <input
               onChange={handleInput}
               value={form.industry}
-              className="outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 my-1"
-              type="text"
               name="industry"
               id="industry"
+              className="outline-none border w-full py-2 px-2"
             />
-            {/* <input onChange={handleInput} value={form.location} className='outline-none text-gray-800 border-[1px] border-gray-500 rounded-sm w-full py-2 px-2 my-1' type="text" name="location" id="location" /> */}
             <button
               type="submit"
-              className="outline-none text-white bg-orange-600  rounded-sm w-full py-2 px-2 mt-7 hover:bg-orange-950 duration-500 cursor-pointer"
+              disabled={loading}
+              className="bg-orange-600 text-white w-full py-2 mt-7"
             >
-              Submit
+              {loading ? "Saving..." : "Submit"}
             </button>
+            {error && <p className="text-red-500 mt-2">{error}</p>}
+            {success && <p className="text-green-500 mt-2">{success}</p>}
             <p
               className="text-orange-800 mt-3 text-lg cursor-pointer"
               onClick={handleSteps}
@@ -162,7 +166,6 @@ const Profile = () => {
               alt="Hero Image"
               width={1000}
               height={1000}
-              className=""
             />
           </div>
         </section>
