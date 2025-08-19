@@ -1,81 +1,67 @@
 const API_URL = "https://internship-finder-api.onrender.com/api/applications";
 
-export const getApplications = async () => {
-  try {
-    const token = localStorage.getItem("token");
-    if (!token) throw new Error("Not authenticated");
-
-    const res = await fetch(API_URL, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    if (!res.ok) {
-      throw new Error("Failed to get applications");
-    }
-
-    return await res.json();
-  } catch (error: any) {
-    console.error("Failed to get applications:", error);
-    throw error;
-  }
-};
-
-export const createApplication = async (applicationData: {
+export const createApplication = async (data: {
   title: string;
   company: string;
   location: string;
   url: string;
-  status: string;
+  status?: string;
 }) => {
-  try {
-    const token = localStorage.getItem("token");
-    if (!token) throw new Error("Not authenticated");
+  const token = localStorage.getItem("token");
+  if (!token) throw new Error("Not authenticated");
 
-    const res = await fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(applicationData),
-    });
+  const res = await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(data),
+  });
 
-    if (!res.ok) {
-      throw new Error("Failed to create application");
-    }
-
-    return await res.json();
-  } catch (error: any) {
-    console.error("Failed to create application:", error);
-    throw error;
-  }
+  if (!res.ok) throw new Error("Failed to create application");
+  return await res.json(); // { message, application }
 };
 
-export const updateApplicationStatus = async (
-  applicationId: number,
-  status: string
-) => {
-  try {
-    const token = localStorage.getItem("token");
-    if (!token) throw new Error("Not authenticated");
+export const getApplications = async () => {
+  const token = localStorage.getItem("token");
+  if (!token) throw new Error("Not authenticated");
 
-    const res = await fetch(`${API_URL}/${applicationId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ status }),
-    });
+  const res = await fetch(API_URL, {
+    method: "GET",
+    headers: { Authorization: `Bearer ${token}` },
+  });
 
-    if (!res.ok) {
-      throw new Error("Failed to update application status");
-    }
+  if (!res.ok) throw new Error("Failed to fetch applications");
+  return await res.json(); // { applications }
+};
 
-    return await res.json();
-  } catch (error: any) {
-    console.error("Failed to update application status:", error);
-    throw error;
-  }
+export const updateApplicationStatus = async (id: number, status: string) => {
+  const token = localStorage.getItem("token");
+  if (!token) throw new Error("Not authenticated");
+
+  const res = await fetch(`${API_URL}/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ status }),
+  });
+
+  if (!res.ok) throw new Error("Failed to update application");
+  return await res.json(); // { message, application }
+};
+
+export const deleteApplication = async (id: number) => {
+  const token = localStorage.getItem("token");
+  if (!token) throw new Error("Not authenticated");
+
+  const res = await fetch(`${API_URL}/${id}`, {
+    method: "DELETE",
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (!res.ok) throw new Error("Failed to delete application");
+  return await res.json(); // { message }
 };
